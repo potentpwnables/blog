@@ -4,6 +4,7 @@ subtitle: Making a Gallery
 tags:
 - example
 - photoswipe
+draft: TRUE
 title: Photoswipe Gallery Sample
 ---
 

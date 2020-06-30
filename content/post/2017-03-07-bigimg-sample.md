@@ -8,6 +8,7 @@ bigimg:
   src: /img/hexagon.jpg
 date: "2017-03-07"
 subtitle: Using Multiple Images
+draft: TRUE
 tags:
 - example
 - bigimg
