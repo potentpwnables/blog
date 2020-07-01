@@ -57,7 +57,7 @@ Now that we have our skeleton, let's add some functionality so we can check that
 
 ```python
 @app.route("/api/v1/stream/flows.json", methods=["GET"])
-def get():
+def test():
     return Response(
         json.dumps({"msg": "Hello World!"}), 
         mimetype="application/json"
@@ -78,7 +78,9 @@ Save the file and exit and then run `python3 app.py`. You should see something l
 * Debugger PIN: ###-###-###
 ```
 
-If you see that, head over to your client VM and open a browser (or just use the browser on your host) and go to `http://<private IP of your server>:5000/api/v1/stream/flows.json`, where the private IP address of your server should be something like 192.168.1.*. You should be created with JSON data that says "Hello world". But that's not a very useful API, so we'll add the real functionality now. The code we just added is what's called a route, and it tells Flask two things:
+If you see that, head over to your client VM and open a browser (or just use the browser on your host) and go to `http://<private IP of your server>:5000/api/v1/stream/flows.json`, where the private IP address of your server should be something like 192.168.1.*. You should be greeted with JSON data that says "Hello world". But that's not a very useful API, so we'll add the real functionality now. 
+
+The code we just added is what's called a route, and it tells Flask two things:
 
 1. What end points should users be able to hit, and  
 2. What Flask should do when users hit a specific end point.
