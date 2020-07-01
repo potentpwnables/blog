@@ -91,4 +91,4 @@ ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
     weight = 3
 
 [permalinks]
-    post = "/:year/:month/:day/:slug/"
+    post = "/:year/:slug/"
