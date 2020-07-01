@@ -14,9 +14,9 @@ image: ''
 ---
 
 This is the second installment of a three-part blog post:
-* [Setting up the Infrastructure](https://tibblesnbits.com/2020/06/29/piping-api-to-gbq-python-part-i)  
-* [Building the API](https://tibblesnbits.com/2020/06/29/piping-api-to-gbq-python-part-ii)
-* [Piping it to Google BigQuery](https://tibblesnbits.com/2020/06/29/piping-api-to-gbq-python-part-iii)
+* [Setting up the Infrastructure](https://tibblesnbits.com/2020/piping-api-to-gbq-python-part-i)  
+* [Building the API](https://tibblesnbits.com/2020/piping-api-to-gbq-python-part-ii)
+* [Piping it to Google BigQuery](https://tibblesnbits.com/2020/piping-api-to-gbq-python-part-iii)
 
 In the last blog post, we walked through setting up some of the initial infrastructure (VMs and the database) that we'd need to rely on when building our API and interacting with it. In this post, we'll go over how to build the API.
 

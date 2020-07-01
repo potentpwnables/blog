@@ -108,4 +108,4 @@ If you don't get any errors, you should be able to run `.tables` and have it ret
 .import /absolute/path/to/flows.csv flows
 ```
 
-The first argument to `.import` is the path to the file you want to import, and the second argument is the name of the table you want to store it in. This is going to take a minute to run, so feel free to grab some coffee or something. The good news is that we've finalized setting up the infrastructure and we can now beging the fun part of actually building the API. Check out the [next installment](https://tibblesnbits.com/2020/06/29/)
+The first argument to `.import` is the path to the file you want to import, and the second argument is the name of the table you want to store it in. This is going to take a minute to run, so feel free to grab some coffee or something. The good news is that we've finalized setting up the infrastructure and we can now begin the fun part of actually building the API. Check out the [next installment](https://tibblesnbits.com/2020/piping-api-to-gbq-python-part-ii) of this series to see how we do it.
