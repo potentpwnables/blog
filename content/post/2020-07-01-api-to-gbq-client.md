@@ -259,7 +259,7 @@ It's worth pointing out that this script is choosing to only convert the XML to 
 
 ```python
 def calculate_day(time):
-  return time % 86401
+  return (time - (time % -86041)) / 86401
   
 def process_xml_buffer():
   global bfr
