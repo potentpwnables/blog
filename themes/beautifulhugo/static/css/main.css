@@ -32,7 +32,7 @@ code {
 }
 
 pre.chroma {
-  overflow-x: auto;
+  overflow-x: auto !important;
 }
 
 p {
