@@ -99,7 +99,7 @@ The first couple of lines should be relatively self explanatory. We set `url` to
 
 The first thing you notice might be that there are 20 lines that are printed, even though we only requested 10 records. The next thing you might realize is that this is because the API isn't sending us the data in chunk sizes large enough to hold an entire record. Instead, it sends as much data as it can in each packet, and continues to send packets until all 10 records have been sent. At this point, you might be asking yourself "is that how all APIs work?". I was certainly asking myself that question. So to check, I connected to the Twitter API and decided to see for myself, and as you can see in the image below, that's exactly how it works.
 
-![twitter_api](img/twitter_api.png)
+![twitter_api](/img/twitter_stream.png)
 
 This of course means that I'll at some point go and read through tweepy's documentation (one of the most popular Python modules for interacting with Twitter) to see how they handle interacting with data like this, but for now we'll implement our own solution.
 
