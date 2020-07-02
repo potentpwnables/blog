@@ -31,6 +31,10 @@ code {
   font-family: Menlo,Monaco,Consolas,"Courier New",monospace;
 }
 
+pre.chroma {
+  overflow-x: auto;
+}
+
 p {
   line-height: 1.5;
   margin: 6px 0;
