@@ -160,7 +160,7 @@ def get_parameters():
 
 Now, if you navigate to that endpoint in your browser via `http://<private IP of your server>:5000/api/v1/test?x=1&y=2` you should be presented with JSON data showing `{"x": 1, "y": 2}`. Hopefully this demonstrates to you how we can access these parameters and use them in our API call. Feel free to play around with some examples of this, and once you feel you understand what it's doing, delete that entire snippet of code from your app.py file.
 
-Because the API parameters are automatically collected in a dictionary, we can check that dictionary for the presence of "scanned_after" or "scanned_before" and embed those into our query to avoid returning all of the results. To do this, we're going to add a couple of lines to our `query_flows` function. We'll add two lines to try to grab the two parameters we're interested in, and then we'll change our query to implement these parameters. Replace your `query_flows` function with the following code:
+Because the API parameters are automatically collected in a dictionary, we can check that dictionary for the presence of "scanned_after" or "scanned_before" and embed those into our query to avoid returning all of the results. We can also add a "limit" parameter to further restrict how many results are returned. To do this, we're going to add a few of lines of code to our `query_flows` function. We'll add three lines to try to grab the parameters we're interested in, and then we'll change our query to implement these parameters. Replace your `query_flows` function with the following code:
 
 ```python
 def query_flows():
@@ -168,8 +168,15 @@ def query_flows():
   c = conn.cursor()
   start = request.args.get("scanned_after", 0)
   end = request.args.get("scanned_before", 5011300)
+  args = (start, end)
   q = "SELECT * FROM flows WHERE time > ? AND time <= ?"
-  c.execute(q, (start, end))
+  
+  limit = request.args.get("limit", None)
+  if limit is not None:
+    q += " LIMIT ?"
+    args = (start, end, limit)
+  
+  c.execute(q, args)
   return Response(stream(conn, c), mimetype="application/json")
 ```
 
@@ -339,9 +346,17 @@ def query_flows():
   c = conn.cursor()
   start = request.args.get("scaned_after", 0)
   end = request.args.get("scanned_before", 5011300)
+  args = (start, end)
+  q = "SELECT * FROM flows WHERE time > ? AND time <= ?"
+  
+  limit = request.args.get("limit", None)
+  if limit is not None:
+    q += " LIMIT ?"
+    args = (start, end, limit)
+  
+  c.execute(q, args)
   fmt = request.args.get("format", "json")
   content_type = f"application/{fmt}"
-  q = "SELECT * FROM flows WHERE time > ? AND time <= ?"
   c.execute(q, (start, end))
   return Response(stream(conn, c, fmt), mimetype=content_type)
   
