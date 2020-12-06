@@ -1,1 +1,1 @@
-My personal blog being run by Hugo and Netlify
+All files and content for https://tibblesnbits.com
