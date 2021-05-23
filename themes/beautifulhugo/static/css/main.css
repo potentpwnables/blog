@@ -35,6 +35,10 @@ pre, code {
   overflow-x: auto !important;
 }
 
+pre code {
+  font-size: 14px !important;
+}
+
 p {
   line-height: 1.5;
   margin: 6px 0;
